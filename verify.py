@@ -7,8 +7,8 @@ def signChallenge( challenge ):
     w3 = Web3()
 
     #This is the only line you need to modify
-    sk = aaa
-    print('hahaha')
+    sk = 0
+    
 
     acct = w3.eth.account.from_key(sk)
 
