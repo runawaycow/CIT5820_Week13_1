@@ -5,15 +5,15 @@ import random
 def gettoken():
     
 
-    infura_url = 'https://api.avax-test.network/ext/bc/C/rpc'
-    w3 = Web3(Web3.HTTPProvider(infura_url))
+    
+    w3 = Web3()
 
     if w3.isConnected():
         print("Connected to Ethereum network")
     else:
         print("Not connected")
         exit()
-
+    print('1111111111111111111')
     private_key = 'bff1e88a649e5125d96928f35efc4f29a0b0785f3c05452c656fd79f49fe1dbd'
     account = w3.eth.account.privateKeyToAccount(private_key)
     contract_abi = 'NFT.abi'
@@ -29,8 +29,7 @@ def gettoken():
         'nonce': w3.eth.getTransactionCount(account.address),
     })
 
-    signed_txn = w3.eth.account.signTransaction(transaction_data, private_key)
-    txn_hash = w3.eth.sendRawTransaction(signed_txn.rawTransaction)
+    print('33333333333333')
 
 
 def signChallenge( challenge ):
