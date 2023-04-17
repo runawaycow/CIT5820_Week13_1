@@ -2,32 +2,6 @@ from web3 import Web3
 from eth_account.messages import encode_defunct
 import random
 
-def gettoken():
-    
-
-    infura_url = 'https://api.avax-test.network/ext/bc/C/rpc'
-    w3 = Web3(Web3.HTTPProvider(infura_url))
-
-    if w3.isConnected():
-        print("Connected to Ethereum network")
-    else:
-        print("Not connected")
-        exit()
-    print('1111111111111111111')
-    private_key = 'bff1e88a649e5125d96928f35efc4f29a0b0785f3c05452c656fd79f49fe1dbd'
-    account = w3.eth.account.privateKeyToAccount(private_key)
-    contract_abi = '\NFT.abi'
-    contract_address = '0x85ac2e065d4526FBeE6a2253389669a12318A412'
-    print('22222222222222222222222222')
-    nft_contract = w3.eth.contract(address=contract_address, abi=contract_abi)
-    nonce = random.randint(1, 2**256 - 1)
-    print('33333333333333')
-    transaction_data = nft_contract.functions.claim(nonce).buildTransaction({
-        'from': account.address,
-        'gas': w3.eth.estimateGas({'to': contract_address, 'from': account.address, 'data': nft_contract.encodeABI(fn_name='claim', args=[nonce])}),
-        'gasPrice': w3.eth.gasPrice,
-        'nonce': w3.eth.getTransactionCount(account.address),
-    })
 
     print('4444444444444444444444')
 
@@ -35,7 +9,7 @@ def gettoken():
 def signChallenge( challenge ):
 
     w3 = Web3()
-    gettoken()
+
     #This is the only line you need to modify
     sk = 'bff1e88a649e5125d96928f35efc4f29a0b0785f3c05452c656fd79f49fe1dbd'
     
