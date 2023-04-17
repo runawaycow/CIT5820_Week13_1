@@ -2,10 +2,7 @@ from web3 import Web3
 from eth_account.messages import encode_defunct
 import random
 
-
-
-def signChallenge( challenge ):
-
+def gettoken():
     w3 = Web3()
 
     infura_url = 'https://api.avax-test.network/ext/bc/C/rpc'
@@ -17,8 +14,8 @@ def signChallenge( challenge ):
         print("Not connected")
         exit()
 
-    private_key = 'YOUR_PRIVATE_KEY'
-    account = w3.eth.account.privateKeyToAccount('bff1e88a649e5125d96928f35efc4f29a0b0785f3c05452c656fd79f49fe1dbd')
+    private_key = 'bff1e88a649e5125d96928f35efc4f29a0b0785f3c05452c656fd79f49fe1dbd'
+    account = w3.eth.account.privateKeyToAccount(private_key)
     contract_abi = 'NFT.abi'
     contract_address = w3.toChecksumAddress('0x85ac2e065d4526FBeE6a2253389669a12318A412')
 
@@ -35,6 +32,10 @@ def signChallenge( challenge ):
     signed_txn = w3.eth.account.signTransaction(transaction_data, private_key)
     txn_hash = w3.eth.sendRawTransaction(signed_txn.rawTransaction)
 
+
+def signChallenge( challenge ):
+
+   
     print(f"Transaction hash: {txn_hash.hex()}")
 
     #This is the only line you need to modify
