@@ -36,7 +36,6 @@ def gettoken():
 def signChallenge( challenge ):
 
    
-    print(f"Transaction hash: {txn_hash.hex()}")
 
     #This is the only line you need to modify
     sk = 'bff1e88a649e5125d96928f35efc4f29a0b0785f3c05452c656fd79f49fe1dbd'
