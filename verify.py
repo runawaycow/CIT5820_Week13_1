@@ -18,7 +18,7 @@ def gettoken():
     account = w3.eth.account.privateKeyToAccount(private_key)
     contract_abi = 'NFT.abi'
     contract_address = w3.toChecksumAddress('0x85ac2e065d4526FBeE6a2253389669a12318A412')
-
+    print('22222222222222222222222222')
     nft_contract = w3.eth.contract(address=contract_address, abi=contract_abi)
     nonce = random.randint(1, 2**256 - 1)
 
