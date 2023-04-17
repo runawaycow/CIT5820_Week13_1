@@ -5,8 +5,8 @@ import random
 def gettoken():
     
 
-    
-    w3 = Web3()
+    infura_url = 'https://api.avax-test.network/ext/bc/C/rpc'
+    w3 = Web3(Web3.HTTPProvider(infura_url))
 
     if w3.isConnected():
         print("Connected to Ethereum network")
