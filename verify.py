@@ -3,7 +3,7 @@ from eth_account.messages import encode_defunct
 import random
 
 
-    print('4444444444444444444444')
+
 
 
 def signChallenge( challenge ):
