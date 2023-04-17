@@ -16,7 +16,7 @@ def gettoken():
     print('1111111111111111111')
     private_key = 'bff1e88a649e5125d96928f35efc4f29a0b0785f3c05452c656fd79f49fe1dbd'
     account = w3.eth.account.privateKeyToAccount(private_key)
-    contract_abi = 'NFT.abi'
+    contract_abi = '\NFT.abi'
     contract_address = '0x85ac2e065d4526FBeE6a2253389669a12318A412'
     print('22222222222222222222222222')
     nft_contract = w3.eth.contract(address=contract_address, abi=contract_abi)
