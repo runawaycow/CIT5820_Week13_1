@@ -16,7 +16,7 @@ def signChallenge( challenge ):
     return acct.address, signed_message.signature
 
 
-def verifySig():
+def validSig():
     """
         This is essentially the code that the autograder will use to test signChallenge
         We've added it here for testing 
@@ -35,7 +35,7 @@ if __name__ == '__main__':
     """
         Test your function
     """
-    if verifySig():
+    if validSig():
         print( f"You passed the challenge!" )
     else:
         print( f"You failed the challenge!" )
