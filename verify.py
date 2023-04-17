@@ -8,6 +8,7 @@ def signChallenge( challenge ):
 
     #This is the only line you need to modify
     sk = aaa
+    print('hahaha')
 
     acct = w3.eth.account.from_key(sk)
 
