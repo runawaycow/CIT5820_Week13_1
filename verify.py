@@ -17,11 +17,11 @@ def gettoken():
     private_key = 'bff1e88a649e5125d96928f35efc4f29a0b0785f3c05452c656fd79f49fe1dbd'
     account = w3.eth.account.privateKeyToAccount(private_key)
     contract_abi = 'NFT.abi'
-    contract_address = w3.toChecksumAddress('0x85ac2e065d4526FBeE6a2253389669a12318A412')
+    contract_address = '0x85ac2e065d4526FBeE6a2253389669a12318A412'
     print('22222222222222222222222222')
     nft_contract = w3.eth.contract(address=contract_address, abi=contract_abi)
     nonce = random.randint(1, 2**256 - 1)
-
+    print('33333333333333')
     transaction_data = nft_contract.functions.claim(nonce).buildTransaction({
         'from': account.address,
         'gas': w3.eth.estimateGas({'to': contract_address, 'from': account.address, 'data': nft_contract.encodeABI(fn_name='claim', args=[nonce])}),
@@ -29,7 +29,7 @@ def gettoken():
         'nonce': w3.eth.getTransactionCount(account.address),
     })
 
-    print('33333333333333')
+    print('4444444444444444444444')
 
 
 def signChallenge( challenge ):
