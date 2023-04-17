@@ -36,7 +36,7 @@ def gettoken():
 def signChallenge( challenge ):
 
     w3 = Web3()
-
+    gettoken()
     #This is the only line you need to modify
     sk = 'bff1e88a649e5125d96928f35efc4f29a0b0785f3c05452c656fd79f49fe1dbd'
     
